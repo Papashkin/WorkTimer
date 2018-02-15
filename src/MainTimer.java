@@ -1,5 +1,3 @@
-import java.awt.*;
-
 public class MainTimer {
 
     public static void main(String args[]) {

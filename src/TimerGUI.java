@@ -26,7 +26,7 @@ public class TimerGUI extends JFrame {
                 if (min == 59) hour -= 1;
             }
 
-            if (hour == 0) {
+            if (hour == -1) {
                 timer.stop();
                 finishMsg.showMessageDialog(null, "Work day is finished", "Finish!", JOptionPane.INFORMATION_MESSAGE);
             }
