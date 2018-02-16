@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="WorkTimer">
+    <output-path>$PROJECT_DIR$/out/artifacts/WorkTimer</output-path>
+    <root id="root">
+      <element id="archive" name="WorkTimer.jar">
+        <element id="module-output" name="WorkTimer" />
+      </element>
+    </root>
+  </artifact>
+</component>

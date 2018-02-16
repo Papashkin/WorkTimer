@@ -17,9 +17,7 @@ public class TimerGUI extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             sec -= 1;
-
             if (sec == -1) sec = 59;
-
             if (sec == 59) {
                 min -= 1;
                 if (min == -1) min = 59;
@@ -29,6 +27,7 @@ public class TimerGUI extends JFrame {
             if (hour == -1) {
                 timer.stop();
                 finishMsg.showMessageDialog(null, "Work day is finished", "Finish!", JOptionPane.INFORMATION_MESSAGE);
+                prepare();
             }
             update();
         }
@@ -37,30 +36,25 @@ public class TimerGUI extends JFrame {
     public TimerGUI() {
         this.getContentPane().add(panel);
         bStart.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed (ActionEvent e){
+            @Override
+            public void actionPerformed (ActionEvent e){
             timer.start();
         }
-    });
+        });
 
         bPause.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed (ActionEvent e){
-            timer.stop();
-        }
-    });
+            @Override
+            public void actionPerformed (ActionEvent e){ timer.stop(); }
+        });
 
         bAgain.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed (ActionEvent e){
-            timer.stop();
-            hour = 8;
-            sec = 0;
-            min = 0;
-            update();
-        }
-    });
-}
+            @Override
+            public void actionPerformed (ActionEvent e){
+                timer.stop();
+                prepare();
+            }
+        });
+    }
 
     public void prepare() {
         hour = 8;
